@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello Page</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      body {
+        margin: 0;
+        background: #ffffff;
+      }
+
+      /* Top bar */
+      header {
+        background: #f2f2f2;
+        border-bottom: 1px solid #dcdcdc;
+        padding: 12px 0;
+        text-align: center;
+        font-size: 18px;
+      }
+
+      /* Main container */
+      .container {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+        margin-top: 50px;
+        gap: 40px;
+      }
+
+      /* Color boxes */
+      .colors {
+        display: flex;
+        gap: 30px;
+      }
+
+      .color-box {
+        width: 90px;
+        height: 70px;
+        border: 1px solid #e5e5e5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #666;
+        font-size: 14px;
+      }
+
+      /* Input section */
+      .greet-box {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      input {
+        width: 180px;
+        padding: 6px;
+        border: 1px solid #999;
+        outline: none;
+      }
+
+      button {
+        padding: 6px 12px;
+        border: 1px solid #999;
+        background: #e0e0e0;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background: #d5d5d5;
+      }
+    </style>
+  </head>
+  <body>
+    <header>Hello <span id="input-name"></span></header>
+
+    <div class="container">
+      <div class="colors">
+        <div id="red" class="color-box">Red</div>
+        <div id="blue" class="color-box">Blue</div>
+        <div id="green" class="color-box">Green</div>
+        <div id="yellow" class="color-box">Yellow</div>
+      </div>
+
+      <div class="greet-box">
+        <input id="input" type="text" placeholder="Enter your name" />
+        <button id="greet">Greet</button>
+      </div>
+    </div>
+    <script>
+      const input = document.getElementById("input");
+      const inputName = document.getElementById("input-name");
+      const greet = document.getElementById("greet");
+      const red = document.getElementById("red");
+      const blue = document.getElementById("blue");
+      const green = document.getElementById("green");
+      const yellow = document.getElementById("yellow");
+
+      red.addEventListener("click", () => {
+        red.style.backgroundColor = "red";
+        red.style.color = "white";
+      });
+      blue.addEventListener("click", () => {
+        blue.style.backgroundColor = "blue";
+        blue.style.color = "white";
+      });
+      green.addEventListener("click", () => {
+        green.style.backgroundColor = "green";
+        green.style.color = "white";
+      });
+      yellow.addEventListener("click", () => {
+        yellow.style.backgroundColor = "yellow";
+        yellow.style.color = "white";
+      });
+
+      greet.addEventListener("click", () => {
+    const name = input.value.trim();
+    inputName.innerText = name;
+  });
+    </script>
+  </body>
+</html>
